@@ -37,7 +37,7 @@ CLIENT_ID = json.loads(open(CLIENT_SEC_FILE, 'r').read())['web']['client_id']
 
 # Connect to the database
 #engine = create_engine('sqlite:///catalog.db')
-engine = create_engine('postgresql:///catalog')
+engine = create_engine('postgresql://catalog:12345@localhost/catalog')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
