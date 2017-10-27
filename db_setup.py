@@ -63,6 +63,6 @@ class Product(Base):
                 "picture": self.picture_file,
                 "category": self.category.name}
 
-engine = create_engine('postgresql:///catalog')
+engine = create_engine('postgresql://catalog:12345@localhost/catalog')
 
 Base.metadata.create_all(engine)
